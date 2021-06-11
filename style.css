@@ -1,0 +1,127 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgb(120, 199, 236);
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+
+    background-image: linear-gradient(90deg, #0a4421, #a7741d, #1660aaef, #45905b);
+    -webkit-background-clip: text;
+    color: transparent;
+
+    background-size: 300%;
+    background-position: -0%;
+
+    animation-name: lights;
+    animation-iteration-count: infinite;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    
+}
+
+@keyframes lights {
+    0% {
+        background-position: 0%;
+    }
+    50% {
+        background-position: 100%;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: center;
+
+    font-family: Poppins;
+    font-size: 2rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    width: 100px;
+    margin-bottom: 1em;
+    cursor: pointer;
+
+    display: block;
+
+    font-family: Roboto;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+input[type='range'] {
+    width: 500px;
+}
+
+.container {
+    position: relative;
+}
+
+.box-container {
+    width: 700px;
+    height: 700px;
+    
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);  
+}
+
+.box {
+    background-color: white;
+}
+
+.side-controls {
+    position: absolute;
+    left: -190px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 180px;
+    height: 100%;
+    background-color: rgb(240, 240, 147);
+    box-sizing: border-box;
+    padding: 15px;
+
+    font-family: Roboto;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    width: 700px;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+#slider {
+    flex-grow: 1;
+}
+
+#slider-label {
+    font-family: Roboto;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#color-picker {
+    display: block;
+    margin-bottom: 1em;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch A Sketch</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header> 
+        <h1>Etch A Sketch</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="side-controls">
+                <button class="button" id="draw">DRAW</button>
+                <button class="button" id="erase">ERASE</button>
+                <button class="button" id="reset">RESET</button>
+
+                <label for="color-picker" id="color-picker-label">Current Color:</label>
+                <input type="color" name="color-picker" id="color-picker">
+
+                <br>
+
+                <div>MODE:</div>
+                <div id="mode">DRAWING</div>
+
+                <br>
+
+                <div>STATUS:</div>
+                <div id="status">PAUSED</div>
+
+                <br><br>
+                <span style="text-align: center;">Click on the drawing pad to pause or resume your current mode</span>
+            </div>
+
+            <div class="box-container"></div>
+
+            <div class="controls">
+                <input type="range" name="slider" id="slider" value="10" min="8" max="50" step="0.1">
+                <label for="slider" id="slider-label">10</label>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
