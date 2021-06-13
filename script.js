@@ -1,4 +1,5 @@
 let drawingMode = true;
+let fillMode = false;
 let isPaused = true;
 let currentColor = '#000000';
 
@@ -9,6 +10,7 @@ let sliderLabel = document.querySelector('#slider-label');
 let drawButton = document.querySelector('#draw');
 let eraseButton = document.querySelector('#erase');
 let resetButton = document.querySelector('#reset');
+let fillButton = document.querySelector('#fill');
 let colorPicker = document.querySelector('#color-picker');
 
 let currentModeLbl = document.querySelector('#mode');
@@ -20,15 +22,21 @@ container.addEventListener('click', () => {
         currentStatusLbl.textContent = "PAUSED";
     else
         currentStatusLbl.textContent = "ACTIVE";
+
+    if(fillMode)
+        fill();
+
 });
 
 drawButton.addEventListener('click', () => {
     drawingMode = true;
+    fillMode = false;
     currentModeLbl.textContent = "DRAWING";
 });
 
 eraseButton.addEventListener('click', () => {
     drawingMode = false;
+    fillMode = false;
     currentModeLbl.textContent = "ERASING";
 });
 
@@ -39,6 +47,11 @@ resetButton.addEventListener('click', () => {
         currentNode.setAttribute('style', 'background-color: white');
         currentNode = currentNode.nextSibling;
     }
+});
+
+fillButton.addEventListener('click', () => {
+    currentModeLbl.textContent = "FILL";
+    fillMode = true;
 });
 
 colorPicker.addEventListener('change', () => {
@@ -55,6 +68,15 @@ function updateGrid(num) {
         addBoxes(num);
     else
         removeBoxes(num);
+}
+
+function fill() {
+    let currentNode = container.firstChild;
+
+    while(currentNode != null) {
+        currentNode.setAttribute('style', `background-color: ${currentColor}`);
+        currentNode = currentNode.nextSibling;
+    }
 }
 
 function addBoxes(num) {
@@ -85,7 +107,6 @@ function removeBoxes(num) {
 function resetContainer(num) {
     clearContainer();
     addBoxes(num);
-    
 }
 
 function updateSliderLabel(value) {
